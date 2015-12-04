@@ -1,10 +1,15 @@
 require("!style!css!../css/main.css");
 
 import React from 'react';
-import Hello from './component.jsx';
+
+import Game from './game.js';
+import Application from './component.jsx';
+
 
 main();
 
 function main() {
-    React.render(<Hello />, document.getElementById('app'));
+    var boardContent = Game.createBoard();
+
+    React.render(<Application game={Game} boardContent={boardContent}></Application>, document.getElementById('app'));
 }
