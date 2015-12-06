@@ -1,0 +1,31 @@
+/* Main Stylesheet */
+
+body {
+    width: 600px;
+    margin: 0 auto;
+}
+
+.gameBoard {
+    width: 100%;
+    border-spacing: 20px;
+
+    td {
+        width: 30%;
+        height: 200px;
+        text-align: center;
+        background-color: #ccc;
+        cursor: pointer;
+
+        &.playerOne {
+            background-color: #67a7ff;
+        }
+
+        &.playerTwo {
+            background-color: #ff5735;
+        }
+    }
+}
+
+.hideWinner {
+    display : none;
+}

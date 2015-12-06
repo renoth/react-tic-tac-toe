@@ -45,6 +45,10 @@ let game = {
     ];
   },
 
+  getBoardContent(board, row, col) {
+      return board[row][col];
+  },
+
   /**
    * Check a slice of the board for winner
    */

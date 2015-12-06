@@ -1,4 +1,4 @@
-require("!style!css!../css/main.css");
+require("../css/main.scss");
 
 import React from 'react';
 

@@ -16,8 +16,8 @@ var config = {
         }
       },
       {
-        test: /\.css$/,
-        loader: 'style-loader!css-loader'
+        test: /\.scss$/,
+        loaders: ["style", "css?sourceMap", "sass?sourceMap"]
       }
     ]
   }
