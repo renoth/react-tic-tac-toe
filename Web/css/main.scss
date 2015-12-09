@@ -3,6 +3,7 @@
 body {
     width: 600px;
     margin: 0 auto;
+    font-family: Helvetica;
 }
 
 .gameBoard {
@@ -11,7 +12,7 @@ body {
 
     td {
         width: 30%;
-        height: 200px;
+        height: 180px;
         text-align: center;
         background-color: #ccc;
         cursor: pointer;
@@ -26,6 +27,18 @@ body {
     }
 }
 
-.hideWinner {
-    display : none;
+.winner {
+    text-align: center;
+    font-size: 2rem;
+    padding: 10px 0;
+}
+
+.newgame {
+    text-align: center;
+
+    a {
+        padding: 10px 15px;
+        background: #4479BA;
+        color: #FFF;
+    }
 }

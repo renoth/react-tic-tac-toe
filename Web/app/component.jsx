@@ -26,6 +26,14 @@ var Board = React.createClass({
                 winner: this.props.game.checkBoard(newContent)
             });
         }
+        console.log(this.state.player);
+    },
+    resetGame: function() {
+        this.setState({
+            player: 0,
+            boardContent: this.props.game.createBoard(),
+            winner: null
+        });
     },
     render : function() {
     return (<div>
@@ -43,17 +51,27 @@ var Board = React.createClass({
             }
         </table>
         <Winner winner={this.state.winner}/>
+        { (this.state.player == 9 || this.state.winner) &&
+            <div className="newgame">
+                <a onClick={(event) => {this.resetGame()}}>Reset</a>
+            </div>
+            }
     </div>);
     }
 });
 
 var Winner = React.createClass({
     render: function() {
-        return (<div className={this.props.winner != null ? "showWinner" : "hideWinner"}>
-            The winner is {this.props.winner == null ? "" : this.props.winner.winner}
+
+        return (<div>
+            {
+                this.props.winner && <div className="winner">
+                    The winner is {this.props.winner == null ? "" : (this.props.winner.winner == 0 ? "blue" : "red")}
+                </div>
+                }
         </div>)
     }
-})
+});
 
 export default Application;
 
