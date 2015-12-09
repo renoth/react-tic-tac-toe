@@ -18,12 +18,14 @@ var Board = React.createClass({
         }
     },
     onPressCell: function(i , k, event) {
-        var newContent = this.props.game.set(this.state.boardContent, this.state.player % 2, i, k);
-        this.setState({
-            player: this.state.player + 1,
-            boardContent: newContent,
-            winner: this.props.game.checkBoard(newContent)
-        });
+        if (this.state.winner == null) {
+            var newContent = this.props.game.set(this.state.boardContent, this.state.player % 2, i, k);
+            this.setState({
+                player: this.state.player + 1,
+                boardContent: newContent,
+                winner: this.props.game.checkBoard(newContent)
+            });
+        }
     },
     render : function() {
     return (<div>
